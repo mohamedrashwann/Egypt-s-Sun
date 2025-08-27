@@ -285,18 +285,18 @@ body {
     padding: 100px 0;
     background-color: #000;
 }
-
+/* start edite */
 .destinations-grid {
     display: grid;
-   grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
     margin-top: 60px;
 }
 
 .destination-card {
     background: #fff;
-    height: 350px;
-    width: 300px;
+    
+    height: 250px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -305,9 +305,12 @@ body {
 }
 
 .destination-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+     height: auto;
+            min-height: 400px;
 }
+
 
 .card-image {
     position: relative;
@@ -319,11 +322,11 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.10s ease;
 }
 
 .destination-card:hover .card-image img {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .card-overlay {
@@ -351,6 +354,22 @@ body {
     margin-bottom: 15px;
     color: #333;
 }
+.hidden-text {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.6s ease;
+            color: #ccc;
+            line-height: 1.8;
+}
+
+.destination-card:hover .hidden-text {
+    opacity: 1;
+    max-height: 300px; /* خليها كبيرة تكفي النص */
+      transform: translateY(0);
+
+}
 
 .card-content p {
     color: #666;
@@ -372,6 +391,23 @@ body {
     font-size: 0.9rem;
     border: 1px solid #e9ecef;
 }
+     .destination-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.4s ease;
+        }
+        
+        .destination-card:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
 /* --- Tour Packages Section --- */
 .tours-section {
