@@ -141,7 +141,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 140, 0, 0.1));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.634), rgba(255, 140, 0, 0.042));
     z-index: 2;
 }
 
@@ -160,7 +160,7 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #fff, #ffd700);
+    background: linear-gradient(45deg, gold, #ffd900);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
